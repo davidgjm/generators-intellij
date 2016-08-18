@@ -1,0 +1,46 @@
+<idea-plugin version="2">
+  <id>com.davidgjm.idea.plugins</id>
+  <name>Java8 Generators</name>
+  <version>1.0</version>
+  <vendor email="dvdgjm@hotmail.com" url="http://www.yourcompany.com">David Gao</vendor>
+
+  <description><![CDATA[
+    Enhanced Java toString(), hashcode() and equals() methods generator
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="107.105"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+  <depends optional="true">
+    com.intellij.modules.lang
+  </depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="generateJava8EqualsHashCode" class="com.davidgjm.idea.plugins.actions.GenerateEqualsAndHashCode"
+            text="Java8 equals() and hashCode()..."
+            description="Generates an implementation of equals() and hashCode() using Guava utility classes">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+    <action id="generateJava8ToString" class="com.davidgjm.idea.plugins.actions.GenerateToString"
+            text="Java8 toString()..."
+            description="Generates an implementation of toString using Guava utility classes">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
