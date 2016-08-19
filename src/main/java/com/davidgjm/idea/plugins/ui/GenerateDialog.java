@@ -21,7 +21,7 @@ public class GenerateDialog extends DialogWrapper {
         setTitle(dialogTitle);
 
         myFields = new CollectionListModel<PsiField>(psiClass.getAllFields());
-        JList fieldList = new JList(myFields);
+        JList<PsiField> fieldList = new JList<PsiField>(myFields);
         fieldList.setCellRenderer(new DefaultPsiElementCellRenderer());
         ToolbarDecorator decorator = ToolbarDecorator.createDecorator(fieldList);
         decorator.disableAddAction();

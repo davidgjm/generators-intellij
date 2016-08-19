@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id "org.jetbrains.intellij" version "0.0.20"
+}
+
+apply plugin: 'idea'
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'java'
+
+/*
+intellij {
+    version '13.1.6' //IntelliJ IDEA dependency
+    //plugins 'coverage' //Bundled plugin dependencies
+//    pluginName 'plugin_name_goes_here'
+}
+*/
+
+group 'org.jetbrains.intellij.plugins'
+version '1.0' // Plugin version
