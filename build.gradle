@@ -32,4 +32,4 @@ intellij {
 }
 
 group 'org.jetbrains.intellij.plugins'
-version '1.0.2' // Plugin version
+version '1.0.1' // Plugin version
