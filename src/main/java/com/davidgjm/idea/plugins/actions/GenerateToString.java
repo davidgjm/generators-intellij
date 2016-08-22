@@ -30,9 +30,7 @@ public class GenerateToString extends AbstractGeneratorAction {
                         "this.getClass().getSimpleName() + \"[\"," +
                         "\"]\")\n");
         String fieldValues = fields.stream()
-                .map(f -> String.format(".add(\"%s = \" + %s)", f.getName(),
-                        "(" + f.getName() + " !=null?" + f.getName() + ":\"null\")"
-                ))
+                .map(f -> String.format(".add(\"%s = \" + %s)", f.getName(), f.getName()))
                 .collect(Collectors.joining("\n"));
         builder.append(fieldValues)
                 .append(".toString();\n}");

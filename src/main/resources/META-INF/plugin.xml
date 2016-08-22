@@ -1,7 +1,6 @@
 <idea-plugin version="2">
   <id>com.davidgjm.idea.plugins</id>
   <name>Java8 Generators</name>
-  <version>1.0.1</version>
   <vendor email="dvdgjm@hotmail.com">David Gao</vendor>
 
     <description><![CDATA[
