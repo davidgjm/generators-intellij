@@ -4,16 +4,16 @@ import com.davidgjm.idea.plugins.AbstractGeneratorAction;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GenerateEqualsAndHashCode extends AbstractGeneratorAction {
     public GenerateEqualsAndHashCode() {
         super("Generate equals and hashCode", "Select fields for equals and hashCode");
     }
 
-    public void generate(final PsiClass psiClass, final List<PsiField> fields) {
+    public void generate(@NotNull final PsiClass psiClass, @NotNull final List<PsiField> fields) {
         new WriteCommandAction.Simple(psiClass.getProject(), psiClass.getContainingFile()) {
             @Override
             protected void run() throws Throwable {

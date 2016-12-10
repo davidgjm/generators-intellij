@@ -9,13 +9,29 @@
     ]]></description>
 
     <change-notes><![CDATA[
-        Release 1.0: Initial release.<br>
-        Release 1.0.1: Changed IntelliJ version compatibility to support legacy releases.<br>
+        <div>
+            <h3>1.1</h3>
+            <ul>
+                <li>Added a menu item to generate all methods (hashcode, equals and toString)</li>
+                <li>Coding improvement</li>
+            </ul>
+        </div>
+        <div>
+            <h3>1.0.1</h3>
+            <p>Changed IntelliJ version compatibility to support legacy releases.</p>
+        </div>
+        <div>
+            <h3>1.0</h3>
+            <p>Initial release.</p>
+        </div>
     ]]>
     </change-notes>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="131"/>
+  <!--
+    For more details about IntelliJ version numbering, see :
+        http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html
+  -->
+  <idea-version since-build="123.72"/>
 
   <depends optional="true">
     com.intellij.modules.lang
@@ -34,6 +50,11 @@
     <action id="generateJava8ToString" class="com.davidgjm.idea.plugins.actions.GenerateToString"
             text="Java8 toString()..."
             description="Generates an implementation of toString using Java 8 features">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+    <action id="generateJava8All" class="com.davidgjm.idea.plugins.actions.GenerateAll"
+            text="Java8 equals(), hashCode() and toString()..."
+            description="Generates overridden methods using Java 8 features">
       <add-to-group group-id="GenerateGroup" anchor="last"/>
     </action>
   </actions>

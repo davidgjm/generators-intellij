@@ -9,11 +9,11 @@ import com.intellij.psi.*;
 import com.intellij.psi.codeStyle.JavaCodeStyleManager;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.davidgjm.idea.plugins.ui.GenerateDialog;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public abstract class AbstractGeneratorAction extends AnAction {
-    public static final String COM_GOOGLE_COMMON_BASE_OBJECTS = "com.google.common.base.Objects";
     private String dialogTitle;
 
     public AbstractGeneratorAction(String text, String dialogTitle) {
@@ -29,8 +29,7 @@ public abstract class AbstractGeneratorAction extends AnAction {
             generate(psiClass, dlg.getFields());
         }
     }
-
-    abstract public void generate(final PsiClass psiClass, final List<PsiField> fields);
+    abstract public void generate(@NotNull final PsiClass psiClass, @NotNull final List<PsiField> fields);
 
     protected void setNewMethod(PsiClass psiClass, String newMethodBody, String methodName) {
         PsiElementFactory elementFactory = JavaPsiFacade.getElementFactory(psiClass.getProject());
